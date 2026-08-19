@@ -1,0 +1,15 @@
+# Credentials — never commit
+.gcp-key.json
+*.json.key
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# OS
+.DS_Store

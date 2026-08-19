@@ -13,4 +13,4 @@ venv/
 
 # OS
 .DS_Store
-data_generation/output/
+pipeline_and_tests/reports/

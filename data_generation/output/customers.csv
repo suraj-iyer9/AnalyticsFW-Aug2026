@@ -1,0 +1,101 @@
+cust_id,cust_name,region,segment,industry,customer_since,behaviour_cohort,account_owner,is_internal
+C0001,"Rodriguez, Figueroa and Sanchez",AMER,Mid-Market,Energy,2017-04-03,healthy,A. Rivera,False
+C0002,Rhodes PLC,APAC,Mid-Market,Manufacturing,2016-10-12,healthy,B. Chen,False
+C0003,Johnson-Davis,AMER,Enterprise,Public Sector,2018-02-03,healthy,C. Okafor,False
+C0004,"Johnson, Gonzalez and Santos",EMEA,Enterprise,Energy,2020-11-26,shelfware,D. Novak,False
+C0005,Cole LLC,AMER,Mid-Market,Manufacturing,2023-04-15,healthy,E. Haddad,False
+C0006,Blake and Sons,EMEA,Enterprise,Financial Services,2022-04-14,healthy,F. Lindqvist,False
+C0007,Ramirez-Lewis,APAC,Enterprise,Manufacturing,2022-11-15,spike_drop,A. Rivera,False
+C0008,Davis Inc,APAC,Enterprise,Healthcare,2019-03-26,healthy,B. Chen,False
+C0009,Munoz-Roman,AMER,Mid-Market,Telecom,2022-07-27,overage,C. Okafor,False
+C0010,"Martinez, Nielsen and Miller",EMEA,Mid-Market,Financial Services,2018-08-21,healthy,D. Novak,False
+C0011,"Montgomery, Hensley and Ray",EMEA,Enterprise,Public Sector,2022-05-05,healthy,E. Haddad,False
+C0012,Stanley LLC,APAC,Enterprise,Public Sector,2024-11-13,shelfware,F. Lindqvist,False
+C0013,Delacruz Group,AMER,Enterprise,Public Sector,2018-07-02,healthy,A. Rivera,False
+C0014,"Flowers, Martin and Kelly",JAPAC,Mid-Market,Healthcare,2022-01-12,healthy,B. Chen,False
+C0015,"Zuniga, Wong and Lynch",APAC,Enterprise,Retail,2017-07-16,healthy,C. Okafor,False
+C0016,"Sanchez, Ford and Nelson",AMER,Mid-Market,Financial Services,2024-04-30,healthy,D. Novak,False
+C0017,"Hawkins, Cohen and Cameron",EMEA,Enterprise,Healthcare,2022-12-26,healthy,E. Haddad,False
+C0018,Underwood LLC,JAPAC,Mid-Market,Public Sector,2019-08-12,healthy,F. Lindqvist,False
+C0019,Clark PLC,AMER,Enterprise,Healthcare,2023-11-21,healthy,A. Rivera,False
+C0020,Lewis-Porter,AMER,Enterprise,Healthcare,2023-12-18,healthy,B. Chen,False
+C0021,"Ellis, Baker and Wright",JAPAC,Enterprise,Manufacturing,2021-01-19,healthy,C. Okafor,False
+C0022,Burgess-Patterson,AMER,Enterprise,Manufacturing,2021-04-02,overage,D. Novak,False
+C0023,Robinson-Bright,AMER,Mid-Market,Energy,2020-08-02,healthy,E. Haddad,False
+C0024,Campos Inc,JAPAC,Mid-Market,Retail,2017-05-17,healthy,F. Lindqvist,False
+C0025,Conner Group,EMEA,Enterprise,Technology,2021-05-14,healthy,A. Rivera,False
+C0026,James-Ferrell,AMER,Enterprise,Healthcare,2020-10-05,healthy,B. Chen,False
+C0027,"Valencia, Smith and Le",AMER,Enterprise,Financial Services,2022-02-19,healthy,C. Okafor,False
+C0028,INTERNAL — QA Sandbox,EMEA,Enterprise,Retail,2018-08-23,overage,D. Novak,True
+C0029,Chavez Ltd,AMER,Mid-Market,Financial Services,2023-11-19,healthy,E. Haddad,False
+C0030,Stanton-Gill,AMER,Mid-Market,Technology,2020-07-27,healthy,F. Lindqvist,False
+C0031,Harrell LLC,AMER,Enterprise,Telecom,2023-07-30,shelfware,A. Rivera,False
+C0032,"Lynch, Hernandez and Farmer",AMER,Enterprise,Telecom,2020-11-08,healthy,B. Chen,False
+C0033,"Sellers, George and Burns",AMER,Enterprise,Energy,2017-01-02,healthy,C. Okafor,False
+C0034,Koch-Decker,AMER,Enterprise,Energy,2018-10-08,healthy,D. Novak,False
+C0035,Allen PLC,AMER,Enterprise,Financial Services,2024-07-10,healthy,E. Haddad,False
+C0036,Dennis Inc,EMEA,Mid-Market,Healthcare,2024-10-20,healthy,F. Lindqvist,False
+C0037,"Cannon, Anderson and Alvarez",AMER,Mid-Market,Healthcare,2020-12-12,healthy,A. Rivera,False
+C0038,Rose-Obrien,AMER,Enterprise,Telecom,2024-09-05,healthy,B. Chen,False
+C0039,"Campos, Vaughn and Marquez",AMER,Enterprise,Telecom,2019-08-04,healthy,C. Okafor,False
+C0040,"Santos, Kim and Holmes",AMER,Mid-Market,Telecom,2017-02-01,shelfware,D. Novak,False
+C0041,Brown Inc,APAC,Mid-Market,Healthcare,2021-04-18,healthy,E. Haddad,False
+C0042,Chapman Inc,AMER,Mid-Market,Financial Services,2016-08-21,overage,F. Lindqvist,False
+C0043,"Brown, Jones and Johnson",JAPAC,Mid-Market,Retail,2018-12-22,healthy,A. Rivera,False
+C0044,"Young, Caldwell and Lewis",AMER,Enterprise,Retail,2017-03-11,healthy,B. Chen,False
+C0045,"Johnston, Sanchez and Kennedy",APAC,Mid-Market,Manufacturing,2019-08-31,overage,C. Okafor,False
+C0046,Davis Group,AMER,Mid-Market,Public Sector,2019-03-10,healthy,D. Novak,False
+C0047,Owens-Daniel,JAPAC,Mid-Market,Public Sector,2022-01-23,healthy,E. Haddad,False
+C0048,"Garcia, Powell and Morgan",AMER,Mid-Market,Telecom,2023-10-04,healthy,F. Lindqvist,False
+C0049,Lee PLC,AMER,Enterprise,Financial Services,2020-01-15,shelfware,A. Rivera,False
+C0050,White-Ford,EMEA,Enterprise,Technology,2023-11-15,healthy,B. Chen,False
+C0051,Ramos PLC,AMER,Mid-Market,Manufacturing,2016-11-17,healthy,C. Okafor,False
+C0052,"Kidd, Huff and Novak",AMER,Enterprise,Manufacturing,2024-05-03,healthy,D. Novak,False
+C0053,Martin Group,AMER,Enterprise,Retail,2020-05-01,spike_drop,E. Haddad,False
+C0054,Barrera-Martin,AMER,Mid-Market,Retail,2016-01-08,healthy,F. Lindqvist,False
+C0055,Baker-Bowers,EMEA,Enterprise,Healthcare,2020-02-05,overage,A. Rivera,False
+C0056,Horton-Cross,AMER,Mid-Market,Technology,2023-01-19,healthy,B. Chen,False
+C0057,"Higgins, Moore and Phillips",JAPAC,Enterprise,Technology,2024-09-20,healthy,C. Okafor,False
+C0058,"Fitzgerald, Brown and Edwards",AMER,Enterprise,Public Sector,2016-06-13,healthy,D. Novak,False
+C0059,Shaw-Farrell,EMEA,Mid-Market,Healthcare,2017-06-01,overage,E. Haddad,False
+C0060,"Miller, Lopez and Larson",AMER,Mid-Market,Healthcare,2022-01-29,healthy,F. Lindqvist,False
+C0061,Powell PLC,AMER,Enterprise,Public Sector,2018-03-20,overage,A. Rivera,False
+C0062,"Williams, Miller and Sandoval",AMER,Enterprise,Healthcare,2021-02-01,shelfware,B. Chen,False
+C0063,Donovan-Harris,APAC,Enterprise,Manufacturing,2022-06-12,shelfware,C. Okafor,False
+C0064,Baker and Sons,AMER,Enterprise,Public Sector,2022-01-17,healthy,D. Novak,False
+C0065,Bryant-Hickman,EMEA,Mid-Market,Financial Services,2024-06-03,healthy,E. Haddad,False
+C0066,Ellis PLC,EMEA,Mid-Market,Healthcare,2024-12-19,overage,F. Lindqvist,False
+C0067,Medina PLC,JAPAC,Enterprise,Healthcare,2018-05-21,healthy,A. Rivera,False
+C0068,Ibarra-Suarez,APAC,Mid-Market,Manufacturing,2019-04-30,healthy,B. Chen,False
+C0069,Kim PLC,AMER,Mid-Market,Technology,2022-05-02,healthy,C. Okafor,False
+C0070,"Riggs, Roman and Rice",AMER,Mid-Market,Public Sector,2022-01-04,overage,D. Novak,False
+C0071,"Evans, Alvarado and Mcmillan",EMEA,Enterprise,Financial Services,2017-03-17,spike_drop,E. Haddad,False
+C0072,Preston Ltd,AMER,Enterprise,Public Sector,2020-12-23,healthy,F. Lindqvist,False
+C0073,INTERNAL — Demo Sandbox,AMER,Enterprise,Manufacturing,2019-02-01,healthy,A. Rivera,True
+C0074,"Walters, Baker and Freeman",EMEA,Enterprise,Telecom,2024-02-24,healthy,B. Chen,False
+C0075,Williams-Cook,EMEA,Enterprise,Financial Services,2017-03-06,healthy,C. Okafor,False
+C0076,Martin-Ramos,AMER,Mid-Market,Manufacturing,2022-05-09,healthy,D. Novak,False
+C0077,"Smith, Jones and Ware",EMEA,Mid-Market,Manufacturing,2024-02-20,overage,E. Haddad,False
+C0078,"Johnson, Wood and Tran",AMER,Enterprise,Technology,2019-11-14,healthy,F. Lindqvist,False
+C0079,Parker Inc,APAC,Mid-Market,Financial Services,2024-02-03,healthy,A. Rivera,False
+C0080,Fleming Ltd,APAC,Enterprise,Retail,2016-12-03,healthy,B. Chen,False
+C0081,"Henson, Russell and Oliver",EMEA,Enterprise,Energy,2017-05-23,healthy,C. Okafor,False
+C0082,Hancock and Sons,JAPAC,Mid-Market,Retail,2023-12-08,overage,D. Novak,False
+C0083,White LLC,APAC,Mid-Market,Manufacturing,2023-01-16,overage,E. Haddad,False
+C0084,Pham-Shields,APAC,Enterprise,Technology,2023-04-19,healthy,F. Lindqvist,False
+C0085,Moore-Haynes,APAC,Enterprise,Retail,2019-06-11,healthy,A. Rivera,False
+C0086,Garrison and Sons,AMER,Mid-Market,Healthcare,2017-10-18,spike_drop,B. Chen,False
+C0087,Bailey-Hoover,AMER,Enterprise,Telecom,2023-11-04,healthy,C. Okafor,False
+C0088,Johnson and Sons,AMER,Mid-Market,Telecom,2019-08-03,healthy,D. Novak,False
+C0089,Lin-Rasmussen,AMER,Mid-Market,Retail,2018-07-06,shelfware,E. Haddad,False
+C0090,"Hicks, Frazier and Anthony",AMER,Mid-Market,Energy,2018-12-24,healthy,F. Lindqvist,False
+C0091,Wilson LLC,AMER,Mid-Market,Public Sector,2017-08-10,healthy,A. Rivera,False
+C0092,INTERNAL — SE Sandbox,AMER,Enterprise,Technology,2019-02-10,shelfware,B. Chen,True
+C0093,Graham-Joyce,JAPAC,Enterprise,Public Sector,2017-01-15,overage,C. Okafor,False
+C0094,"Lee, Williams and Graham",AMER,Mid-Market,Public Sector,2020-09-05,overage,D. Novak,False
+C0095,"Mcdaniel, Bentley and Mclaughlin",AMER,Mid-Market,Technology,2017-10-09,healthy,E. Haddad,False
+C0096,Jones-Beck,EMEA,Enterprise,Healthcare,2018-12-21,healthy,F. Lindqvist,False
+C0097,Alvarado-Martinez,AMER,Mid-Market,Public Sector,2024-02-07,healthy,A. Rivera,False
+C0098,"Parker, Ortiz and Powell",AMER,Enterprise,Retail,2018-08-30,spike_drop,B. Chen,False
+C0099,Lee Ltd,AMER,Enterprise,Technology,2024-06-18,shelfware,C. Okafor,False
+C0100,"Adkins, Thompson and Carroll",EMEA,Mid-Market,Healthcare,2019-08-28,healthy,D. Novak,False

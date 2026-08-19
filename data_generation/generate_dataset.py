@@ -268,7 +268,10 @@ def build_entitlements(customers: pd.DataFrame, products: pd.DataFrame) -> pd.Da
     for j, r in enumerate(gap_src.itertuples()):
         new_end = r.start_date + relativedelta(months=5)
         df.loc[df.entitlement_id == r.entitlement_id, "end_date"] = new_end
-        gap_days = random.randint(30, 60)
+        # 60-120 days, not 30-60. A calendar month counts as covered if a
+        # contract is active for ANY day of it, so a short gap is invisible at
+        # monthly grain. The gap has to span a whole month to be real.
+        gap_days = random.randint(60, 120)
         renew_start = new_end + timedelta(days=gap_days)
         gap_rows.append(
             {
@@ -360,6 +363,13 @@ def build_consumption(entitlements: pd.DataFrame, customers: pd.DataFrame) -> pd
             # B5 — the final month is only partially loaded when the pipeline runs
             if m == WINDOW_END:
                 consumed *= LATE_DATA_FACTOR
+            # Real telemetry emits NO ROW when there is no usage — it does not
+            # emit a zero. Modelling that honestly is what forces the pipeline's
+            # zero-fill to do real work: without it a shelfware account produces
+            # NULL, and NULL in this system means "too new to judge" — the exact
+            # opposite of the correct conclusion.
+            if consumed <= 0:
+                continue
             rows.append(
                 {
                     "entitlement_id": e.entitlement_id,

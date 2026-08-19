@@ -1,0 +1,501 @@
+product_id,product_name,product_platform,sku_tier,consumption_model,list_price_per_unit
+P0001,Cortex XSOAR — Premium,Cortex,Premium,credits,156.75
+P0002,Enterprise DLP — Premium,Prisma SASE,Premium,licensed_units,71.57
+P0003,Enterprise DLP — Premium,Prisma SASE,Premium,licensed_units,93.44
+P0004,Enterprise DLP — Premium,Prisma SASE,Premium,credits,154.21
+P0005,Advanced DNS Security — Premium,Network Security (Strata),Premium,licensed_units,229.61
+P0006,Prisma SD-WAN — Premium,Prisma SASE,Premium,licensed_units,433.75
+P0007,Cortex XDR — Premium,Cortex,Premium,credits,51.68
+P0008,Autonomous DEM — Premium,Prisma SASE,Premium,licensed_units,395.02
+P0009,Exposure Management — Advanced,Cortex,Advanced,credits,117.13
+P0010,NGFW — Essentials,Network Security (Strata),Essentials,licensed_units,234.36
+P0011,Cortex XSIAM — Advanced,Cortex,Advanced,credits,205.96
+P0012,Cortex XDR — Premium,Cortex,Premium,credits,337.89
+P0013,Prisma SD-WAN — Essentials,Prisma SASE,Essentials,licensed_units,14.59
+P0014,Cortex XSIAM — Advanced,Cortex,Advanced,credits,114.42
+P0015,Exposure Management — Premium,Cortex,Premium,credits,229.41
+P0016,Prisma Access — Advanced,Prisma SASE,Advanced,licensed_units,229.45
+P0017,SaaS Security — Premium,Prisma SASE,Premium,licensed_units,365.46
+P0018,Autonomous DEM — Premium,Prisma SASE,Premium,licensed_units,436.41
+P0019,Prisma SD-WAN — Premium,Prisma SASE,Premium,credits,222.63
+P0020,Exposure Management — Advanced,Cortex,Advanced,credits,370.4
+P0021,Autonomous DEM — Essentials,Prisma SASE,Essentials,licensed_units,48.26
+P0022,Advanced URL Filtering — Advanced,Network Security (Strata),Advanced,licensed_units,264.79
+P0023,Advanced Threat Prevention — Advanced,Network Security (Strata),Advanced,licensed_units,342.6
+P0024,Advanced WildFire — Advanced,Network Security (Strata),Advanced,licensed_units,206.58
+P0025,Advanced WildFire — Advanced,Network Security (Strata),Advanced,credits,285.35
+P0026,Attack Surface Management — Advanced,Cortex,Advanced,credits,235.23
+P0027,AI Model Scanning — Advanced,Prisma AIRS,Advanced,credits,411.41
+P0028,AI Posture Management — Premium,Prisma AIRS,Premium,credits,361.84
+P0029,SaaS Security — Essentials,Prisma SASE,Essentials,licensed_units,139.73
+P0030,Enterprise DLP — Advanced,Prisma SASE,Advanced,licensed_units,385.53
+P0031,Cortex Cloud — Essentials,Cortex,Essentials,credits,470.98
+P0032,Enterprise DLP — Premium,Prisma SASE,Premium,licensed_units,24.68
+P0033,Cortex XDR — Advanced,Cortex,Advanced,credits,97.05
+P0034,Advanced URL Filtering — Essentials,Network Security (Strata),Essentials,licensed_units,169.95
+P0035,Cortex XSOAR — Advanced,Cortex,Advanced,credits,130.06
+P0036,NGFW — Premium,Network Security (Strata),Premium,licensed_units,479.96
+P0037,IoT Security — Essentials,Network Security (Strata),Essentials,credits,317.02
+P0038,Cortex XDR — Essentials,Cortex,Essentials,credits,404.76
+P0039,Cortex XDR — Essentials,Cortex,Essentials,credits,233.63
+P0040,Advanced Threat Prevention — Advanced,Network Security (Strata),Advanced,licensed_units,370.91
+P0041,Advanced DNS Security — Premium,Network Security (Strata),Premium,licensed_units,376.01
+P0042,Advanced URL Filtering — Essentials,Network Security (Strata),Essentials,licensed_units,446.72
+P0043,Enterprise DLP — Advanced,Prisma SASE,Advanced,credits,104.82
+P0044,Autonomous DEM — Essentials,Prisma SASE,Essentials,licensed_units,373.52
+P0045,Attack Surface Management — Essentials,Cortex,Essentials,credits,384.63
+P0046,Prisma Access — Advanced,Prisma SASE,Advanced,licensed_units,321.59
+P0047,IoT Security — Advanced,Network Security (Strata),Advanced,licensed_units,208.59
+P0048,Enterprise DLP — Advanced,Prisma SASE,Advanced,licensed_units,399.84
+P0049,Cortex Cloud — Essentials,Cortex,Essentials,credits,355.42
+P0050,AI Model Scanning — Premium,Prisma AIRS,Premium,credits,390.24
+P0051,Enterprise DLP — Advanced,Prisma SASE,Advanced,licensed_units,354.12
+P0052,Advanced Threat Prevention — Essentials,Network Security (Strata),Essentials,licensed_units,222.98
+P0053,Attack Surface Management — Premium,Cortex,Premium,credits,324.71
+P0054,Advanced WildFire — Advanced,Network Security (Strata),Advanced,licensed_units,111.27
+P0055,Cortex XSOAR — Advanced,Cortex,Advanced,credits,423.99
+P0056,Cortex XSOAR — Premium,Cortex,Premium,credits,16.75
+P0057,AI Runtime Security — Essentials,Prisma AIRS,Essentials,credits,348.99
+P0058,Prisma SD-WAN — Premium,Prisma SASE,Premium,licensed_units,345.14
+P0059,Prisma Access — Essentials,Prisma SASE,Essentials,licensed_units,201.26
+P0060,IoT Security — Premium,Network Security (Strata),Premium,licensed_units,271.03
+P0061,IoT Security — Premium,Network Security (Strata),Premium,licensed_units,340.94
+P0062,Advanced URL Filtering — Essentials,Network Security (Strata),Essentials,licensed_units,102.13
+P0063,Advanced DNS Security — Premium,Network Security (Strata),Premium,licensed_units,113.27
+P0064,Autonomous DEM — Premium,Prisma SASE,Premium,credits,257.53
+P0065,NGFW — Essentials,Network Security (Strata),Essentials,licensed_units,180.89
+P0066,IoT Security — Premium,Network Security (Strata),Premium,licensed_units,33.3
+P0067,Advanced URL Filtering — Premium,Network Security (Strata),Premium,credits,310.52
+P0068,Cortex XSIAM — Essentials,Cortex,Essentials,credits,280.66
+P0069,Enterprise DLP — Advanced,Prisma SASE,Advanced,licensed_units,36.04
+P0070,AI Posture Management — Essentials,Prisma AIRS,Essentials,credits,396.75
+P0071,Prisma Access — Premium,Prisma SASE,Premium,licensed_units,37.09
+P0072,Advanced DNS Security — Advanced,Network Security (Strata),Advanced,licensed_units,128.15
+P0073,Enterprise DLP — Premium,Prisma SASE,Premium,licensed_units,301.42
+P0074,Cortex Cloud — Advanced,Cortex,Advanced,credits,437.18
+P0075,Advanced DNS Security — Advanced,Network Security (Strata),Advanced,licensed_units,302.64
+P0076,Exposure Management — Essentials,Cortex,Essentials,credits,455.47
+P0077,Advanced Threat Prevention — Advanced,Network Security (Strata),Advanced,licensed_units,85.5
+P0078,NGFW — Essentials,Network Security (Strata),Essentials,licensed_units,222.84
+P0079,Prisma Browser — Essentials,Prisma SASE,Essentials,licensed_units,342.86
+P0080,Cortex Cloud — Essentials,Cortex,Essentials,credits,333.7
+P0081,AI Access Security — Advanced,Prisma AIRS,Advanced,credits,65.72
+P0082,Advanced Threat Prevention — Advanced,Network Security (Strata),Advanced,credits,45.42
+P0083,Advanced URL Filtering — Premium,Network Security (Strata),Premium,licensed_units,278.39
+P0084,NGFW — Advanced,Network Security (Strata),Advanced,licensed_units,339.48
+P0085,AI Posture Management — Advanced,Prisma AIRS,Advanced,credits,49.65
+P0086,Advanced WildFire — Premium,Network Security (Strata),Premium,licensed_units,129.17
+P0087,IoT Security — Premium,Network Security (Strata),Premium,licensed_units,21.71
+P0088,Cortex XSOAR — Premium,Cortex,Premium,credits,30.83
+P0089,Cortex Cloud — Premium,Cortex,Premium,credits,316.91
+P0090,AI Access Security — Premium,Prisma AIRS,Premium,credits,215.99
+P0091,Cortex XSIAM — Advanced,Cortex,Advanced,credits,174.85
+P0092,IoT Security — Essentials,Network Security (Strata),Essentials,credits,166.35
+P0093,Cortex XSOAR — Premium,Cortex,Premium,credits,454.35
+P0094,Attack Surface Management — Essentials,Cortex,Essentials,credits,224.86
+P0095,Advanced URL Filtering — Essentials,Network Security (Strata),Essentials,credits,201.15
+P0096,Prisma Access — Premium,Prisma SASE,Premium,credits,228.2
+P0097,Advanced DNS Security — Advanced,Network Security (Strata),Advanced,licensed_units,245.29
+P0098,Prisma Access — Essentials,Prisma SASE,Essentials,licensed_units,73.31
+P0099,IoT Security — Advanced,Network Security (Strata),Advanced,licensed_units,467.43
+P0100,Cortex XDR — Premium,Cortex,Premium,credits,86.12
+P0101,SaaS Security — Advanced,Prisma SASE,Advanced,licensed_units,476.38
+P0102,AI Posture Management — Essentials,Prisma AIRS,Essentials,credits,315.13
+P0103,IoT Security — Advanced,Network Security (Strata),Advanced,licensed_units,139.96
+P0104,Cortex Cloud — Essentials,Cortex,Essentials,credits,225.78
+P0105,Advanced Threat Prevention — Premium,Network Security (Strata),Premium,licensed_units,423.52
+P0106,Cortex XSOAR — Advanced,Cortex,Advanced,credits,171.06
+P0107,Cortex XSOAR — Essentials,Cortex,Essentials,credits,144.37
+P0108,Advanced DNS Security — Premium,Network Security (Strata),Premium,credits,241.15
+P0109,Advanced DNS Security — Advanced,Network Security (Strata),Advanced,licensed_units,270.3
+P0110,Enterprise DLP — Advanced,Prisma SASE,Advanced,credits,471.0
+P0111,Advanced WildFire — Essentials,Network Security (Strata),Essentials,credits,204.24
+P0112,Advanced WildFire — Premium,Network Security (Strata),Premium,credits,190.42
+P0113,AI Access Security — Advanced,Prisma AIRS,Advanced,credits,463.54
+P0114,Advanced DNS Security — Advanced,Network Security (Strata),Advanced,credits,421.12
+P0115,SaaS Security — Advanced,Prisma SASE,Advanced,licensed_units,79.46
+P0116,Cortex XDR — Essentials,Cortex,Essentials,credits,231.72
+P0117,AI Model Scanning — Premium,Prisma AIRS,Premium,credits,336.19
+P0118,Cortex XSOAR — Premium,Cortex,Premium,credits,414.17
+P0119,Prisma Browser — Premium,Prisma SASE,Premium,licensed_units,367.4
+P0120,Cortex XSIAM — Premium,Cortex,Premium,credits,44.02
+P0121,Cortex XSOAR — Essentials,Cortex,Essentials,credits,361.49
+P0122,Prisma Access — Premium,Prisma SASE,Premium,licensed_units,59.04
+P0123,Advanced URL Filtering — Essentials,Network Security (Strata),Essentials,licensed_units,384.6
+P0124,Advanced URL Filtering — Advanced,Network Security (Strata),Advanced,licensed_units,260.59
+P0125,Prisma SD-WAN — Essentials,Prisma SASE,Essentials,licensed_units,297.24
+P0126,Autonomous DEM — Essentials,Prisma SASE,Essentials,licensed_units,284.92
+P0127,IoT Security — Advanced,Network Security (Strata),Advanced,licensed_units,324.08
+P0128,Cortex Cloud — Advanced,Cortex,Advanced,credits,329.12
+P0129,Advanced WildFire — Advanced,Network Security (Strata),Advanced,credits,152.0
+P0130,AI Model Scanning — Advanced,Prisma AIRS,Advanced,credits,407.6
+P0131,Advanced WildFire — Advanced,Network Security (Strata),Advanced,licensed_units,190.48
+P0132,Prisma Browser — Premium,Prisma SASE,Premium,licensed_units,469.68
+P0133,Cortex XSOAR — Essentials,Cortex,Essentials,credits,276.85
+P0134,Exposure Management — Essentials,Cortex,Essentials,credits,438.17
+P0135,Cortex XSOAR — Essentials,Cortex,Essentials,credits,296.11
+P0136,Autonomous DEM — Essentials,Prisma SASE,Essentials,licensed_units,329.19
+P0137,Exposure Management — Premium,Cortex,Premium,credits,404.34
+P0138,Exposure Management — Premium,Cortex,Premium,credits,30.45
+P0139,Cortex XSIAM — Premium,Cortex,Premium,credits,182.76
+P0140,Advanced URL Filtering — Advanced,Network Security (Strata),Advanced,licensed_units,94.2
+P0141,Advanced DNS Security — Advanced,Network Security (Strata),Advanced,licensed_units,439.51
+P0142,Cortex XSOAR — Advanced,Cortex,Advanced,credits,464.74
+P0143,Advanced URL Filtering — Essentials,Network Security (Strata),Essentials,licensed_units,47.24
+P0144,Cortex XDR — Premium,Cortex,Premium,credits,350.93
+P0145,AI Model Scanning — Essentials,Prisma AIRS,Essentials,credits,382.04
+P0146,Advanced DNS Security — Essentials,Network Security (Strata),Essentials,licensed_units,326.88
+P0147,Attack Surface Management — Advanced,Cortex,Advanced,credits,396.89
+P0148,AI Runtime Security — Premium,Prisma AIRS,Premium,credits,121.43
+P0149,Advanced DNS Security — Advanced,Network Security (Strata),Advanced,credits,115.6
+P0150,Advanced WildFire — Premium,Network Security (Strata),Premium,licensed_units,203.08
+P0151,NGFW — Advanced,Network Security (Strata),Advanced,credits,66.34
+P0152,Advanced DNS Security — Essentials,Network Security (Strata),Essentials,licensed_units,185.63
+P0153,AI Posture Management — Premium,Prisma AIRS,Premium,credits,359.38
+P0154,Advanced WildFire — Premium,Network Security (Strata),Premium,licensed_units,241.01
+P0155,Prisma Browser — Essentials,Prisma SASE,Essentials,licensed_units,113.68
+P0156,Prisma SD-WAN — Advanced,Prisma SASE,Advanced,licensed_units,332.9
+P0157,Autonomous DEM — Advanced,Prisma SASE,Advanced,licensed_units,141.11
+P0158,AI Posture Management — Essentials,Prisma AIRS,Essentials,credits,322.18
+P0159,Attack Surface Management — Essentials,Cortex,Essentials,credits,35.67
+P0160,Advanced Threat Prevention — Premium,Network Security (Strata),Premium,licensed_units,400.35
+P0161,SaaS Security — Essentials,Prisma SASE,Essentials,credits,121.04
+P0162,Attack Surface Management — Essentials,Cortex,Essentials,credits,141.76
+P0163,AI Access Security — Premium,Prisma AIRS,Premium,credits,129.31
+P0164,IoT Security — Essentials,Network Security (Strata),Essentials,licensed_units,179.66
+P0165,Attack Surface Management — Advanced,Cortex,Advanced,credits,19.39
+P0166,Advanced Threat Prevention — Premium,Network Security (Strata),Premium,licensed_units,65.19
+P0167,Advanced WildFire — Advanced,Network Security (Strata),Advanced,licensed_units,63.04
+P0168,SaaS Security — Essentials,Prisma SASE,Essentials,licensed_units,437.3
+P0169,Cortex XSOAR — Advanced,Cortex,Advanced,credits,313.08
+P0170,Advanced WildFire — Advanced,Network Security (Strata),Advanced,licensed_units,62.53
+P0171,Cortex Cloud — Essentials,Cortex,Essentials,credits,432.86
+P0172,Advanced Threat Prevention — Essentials,Network Security (Strata),Essentials,licensed_units,304.18
+P0173,Autonomous DEM — Advanced,Prisma SASE,Advanced,licensed_units,291.58
+P0174,Advanced DNS Security — Premium,Network Security (Strata),Premium,licensed_units,383.17
+P0175,IoT Security — Premium,Network Security (Strata),Premium,credits,270.02
+P0176,Cortex Cloud — Advanced,Cortex,Advanced,credits,427.63
+P0177,Enterprise DLP — Advanced,Prisma SASE,Advanced,licensed_units,56.5
+P0178,Autonomous DEM — Advanced,Prisma SASE,Advanced,licensed_units,83.44
+P0179,AI Runtime Security — Essentials,Prisma AIRS,Essentials,credits,401.27
+P0180,NGFW — Premium,Network Security (Strata),Premium,licensed_units,391.91
+P0181,SaaS Security — Premium,Prisma SASE,Premium,licensed_units,325.57
+P0182,Autonomous DEM — Advanced,Prisma SASE,Advanced,credits,349.46
+P0183,AI Model Scanning — Advanced,Prisma AIRS,Advanced,credits,60.49
+P0184,Prisma SD-WAN — Premium,Prisma SASE,Premium,licensed_units,408.52
+P0185,SaaS Security — Advanced,Prisma SASE,Advanced,licensed_units,142.37
+P0186,Advanced WildFire — Premium,Network Security (Strata),Premium,credits,395.02
+P0187,Exposure Management — Premium,Cortex,Premium,credits,24.29
+P0188,AI Model Scanning — Essentials,Prisma AIRS,Essentials,credits,96.43
+P0189,Cortex XSOAR — Advanced,Cortex,Advanced,credits,176.28
+P0190,Advanced Threat Prevention — Premium,Network Security (Strata),Premium,licensed_units,44.57
+P0191,Cortex XSIAM — Essentials,Cortex,Essentials,credits,361.18
+P0192,Advanced WildFire — Advanced,Network Security (Strata),Advanced,licensed_units,185.18
+P0193,Attack Surface Management — Premium,Cortex,Premium,credits,51.76
+P0194,Advanced Threat Prevention — Premium,Network Security (Strata),Premium,licensed_units,50.18
+P0195,Enterprise DLP — Advanced,Prisma SASE,Advanced,licensed_units,205.84
+P0196,Advanced DNS Security — Essentials,Network Security (Strata),Essentials,licensed_units,63.9
+P0197,Attack Surface Management — Advanced,Cortex,Advanced,credits,258.61
+P0198,Advanced Threat Prevention — Advanced,Network Security (Strata),Advanced,credits,37.64
+P0199,Advanced Threat Prevention — Essentials,Network Security (Strata),Essentials,credits,147.46
+P0200,Advanced WildFire — Premium,Network Security (Strata),Premium,licensed_units,72.46
+P0201,Prisma SD-WAN — Premium,Prisma SASE,Premium,licensed_units,324.65
+P0202,Enterprise DLP — Premium,Prisma SASE,Premium,licensed_units,20.77
+P0203,AI Model Scanning — Premium,Prisma AIRS,Premium,credits,212.91
+P0204,Autonomous DEM — Advanced,Prisma SASE,Advanced,licensed_units,201.56
+P0205,AI Access Security — Premium,Prisma AIRS,Premium,credits,227.33
+P0206,Cortex XSOAR — Essentials,Cortex,Essentials,credits,216.38
+P0207,Advanced WildFire — Premium,Network Security (Strata),Premium,licensed_units,48.81
+P0208,Exposure Management — Advanced,Cortex,Advanced,credits,115.7
+P0209,Cortex XSIAM — Premium,Cortex,Premium,credits,308.35
+P0210,Prisma SD-WAN — Advanced,Prisma SASE,Advanced,licensed_units,460.45
+P0211,Cortex XDR — Essentials,Cortex,Essentials,credits,60.11
+P0212,Advanced Threat Prevention — Premium,Network Security (Strata),Premium,licensed_units,367.28
+P0213,IoT Security — Advanced,Network Security (Strata),Advanced,licensed_units,275.83
+P0214,Autonomous DEM — Premium,Prisma SASE,Premium,licensed_units,473.7
+P0215,IoT Security — Advanced,Network Security (Strata),Advanced,licensed_units,43.96
+P0216,Prisma Browser — Advanced,Prisma SASE,Advanced,licensed_units,176.71
+P0217,Advanced WildFire — Advanced,Network Security (Strata),Advanced,licensed_units,184.57
+P0218,IoT Security — Essentials,Network Security (Strata),Essentials,licensed_units,249.31
+P0219,SaaS Security — Premium,Prisma SASE,Premium,credits,222.48
+P0220,Exposure Management — Essentials,Cortex,Essentials,credits,162.47
+P0221,Prisma SD-WAN — Essentials,Prisma SASE,Essentials,licensed_units,391.53
+P0222,Exposure Management — Essentials,Cortex,Essentials,credits,248.13
+P0223,Advanced Threat Prevention — Premium,Network Security (Strata),Premium,licensed_units,217.65
+P0224,Prisma SD-WAN — Advanced,Prisma SASE,Advanced,licensed_units,144.39
+P0225,Prisma Browser — Premium,Prisma SASE,Premium,licensed_units,381.36
+P0226,Cortex XSIAM — Advanced,Cortex,Advanced,credits,56.23
+P0227,Cortex XSOAR — Advanced,Cortex,Advanced,credits,350.71
+P0228,Attack Surface Management — Essentials,Cortex,Essentials,credits,168.01
+P0229,Prisma SD-WAN — Advanced,Prisma SASE,Advanced,licensed_units,319.03
+P0230,Cortex XDR — Premium,Cortex,Premium,credits,343.73
+P0231,Advanced DNS Security — Advanced,Network Security (Strata),Advanced,licensed_units,165.73
+P0232,IoT Security — Premium,Network Security (Strata),Premium,credits,439.03
+P0233,IoT Security — Advanced,Network Security (Strata),Advanced,licensed_units,20.53
+P0234,Advanced Threat Prevention — Advanced,Network Security (Strata),Advanced,credits,239.57
+P0235,Advanced Threat Prevention — Essentials,Network Security (Strata),Essentials,licensed_units,407.19
+P0236,Advanced DNS Security — Premium,Network Security (Strata),Premium,credits,29.67
+P0237,Advanced DNS Security — Essentials,Network Security (Strata),Essentials,licensed_units,84.19
+P0238,IoT Security — Premium,Network Security (Strata),Premium,credits,89.47
+P0239,Enterprise DLP — Advanced,Prisma SASE,Advanced,licensed_units,123.16
+P0240,Prisma Browser — Premium,Prisma SASE,Premium,credits,121.51
+P0241,Advanced WildFire — Essentials,Network Security (Strata),Essentials,licensed_units,455.26
+P0242,AI Posture Management — Advanced,Prisma AIRS,Advanced,credits,376.16
+P0243,Enterprise DLP — Essentials,Prisma SASE,Essentials,credits,386.99
+P0244,Advanced URL Filtering — Essentials,Network Security (Strata),Essentials,licensed_units,421.09
+P0245,Prisma Access — Premium,Prisma SASE,Premium,credits,410.35
+P0246,Advanced Threat Prevention — Advanced,Network Security (Strata),Advanced,licensed_units,252.25
+P0247,Cortex XSIAM — Essentials,Cortex,Essentials,credits,394.22
+P0248,Cortex XSIAM — Advanced,Cortex,Advanced,credits,36.92
+P0249,Prisma SD-WAN — Advanced,Prisma SASE,Advanced,credits,187.46
+P0250,NGFW — Premium,Network Security (Strata),Premium,licensed_units,382.37
+P0251,Advanced URL Filtering — Advanced,Network Security (Strata),Advanced,licensed_units,76.95
+P0252,Cortex Cloud — Premium,Cortex,Premium,credits,14.46
+P0253,Advanced URL Filtering — Essentials,Network Security (Strata),Essentials,credits,268.84
+P0254,Attack Surface Management — Advanced,Cortex,Advanced,credits,64.04
+P0255,Advanced URL Filtering — Essentials,Network Security (Strata),Essentials,licensed_units,208.48
+P0256,Cortex Cloud — Essentials,Cortex,Essentials,credits,63.88
+P0257,AI Runtime Security — Premium,Prisma AIRS,Premium,credits,253.2
+P0258,Advanced Threat Prevention — Advanced,Network Security (Strata),Advanced,licensed_units,299.73
+P0259,Advanced WildFire — Essentials,Network Security (Strata),Essentials,licensed_units,52.07
+P0260,AI Runtime Security — Premium,Prisma AIRS,Premium,credits,266.63
+P0261,Attack Surface Management — Premium,Cortex,Premium,credits,21.52
+P0262,Cortex XSIAM — Premium,Cortex,Premium,credits,193.06
+P0263,Autonomous DEM — Essentials,Prisma SASE,Essentials,licensed_units,43.62
+P0264,IoT Security — Premium,Network Security (Strata),Premium,licensed_units,284.33
+P0265,Cortex XDR — Essentials,Cortex,Essentials,credits,176.88
+P0266,IoT Security — Essentials,Network Security (Strata),Essentials,credits,332.43
+P0267,AI Posture Management — Premium,Prisma AIRS,Premium,credits,97.31
+P0268,IoT Security — Advanced,Network Security (Strata),Advanced,licensed_units,106.34
+P0269,Cortex XSIAM — Advanced,Cortex,Advanced,credits,448.82
+P0270,SaaS Security — Advanced,Prisma SASE,Advanced,licensed_units,364.54
+P0271,Advanced URL Filtering — Essentials,Network Security (Strata),Essentials,credits,167.34
+P0272,Advanced URL Filtering — Advanced,Network Security (Strata),Advanced,credits,359.87
+P0273,Cortex Cloud — Advanced,Cortex,Advanced,credits,467.7
+P0274,Enterprise DLP — Advanced,Prisma SASE,Advanced,credits,255.02
+P0275,Exposure Management — Advanced,Cortex,Advanced,credits,48.94
+P0276,Cortex XDR — Premium,Cortex,Premium,credits,149.48
+P0277,Advanced URL Filtering — Premium,Network Security (Strata),Premium,licensed_units,220.69
+P0278,Cortex XDR — Premium,Cortex,Premium,credits,219.75
+P0279,Autonomous DEM — Advanced,Prisma SASE,Advanced,licensed_units,215.55
+P0280,Cortex XSIAM — Essentials,Cortex,Essentials,credits,326.11
+P0281,SaaS Security — Premium,Prisma SASE,Premium,licensed_units,457.91
+P0282,Advanced DNS Security — Premium,Network Security (Strata),Premium,credits,28.29
+P0283,IoT Security — Advanced,Network Security (Strata),Advanced,licensed_units,456.35
+P0284,Advanced Threat Prevention — Premium,Network Security (Strata),Premium,licensed_units,185.61
+P0285,Prisma Access — Premium,Prisma SASE,Premium,licensed_units,183.73
+P0286,Advanced URL Filtering — Essentials,Network Security (Strata),Essentials,credits,24.13
+P0287,Advanced DNS Security — Advanced,Network Security (Strata),Advanced,credits,67.11
+P0288,Exposure Management — Advanced,Cortex,Advanced,credits,112.42
+P0289,Exposure Management — Advanced,Cortex,Advanced,credits,105.68
+P0290,NGFW — Advanced,Network Security (Strata),Advanced,licensed_units,345.86
+P0291,AI Model Scanning — Premium,Prisma AIRS,Premium,credits,174.6
+P0292,Advanced DNS Security — Advanced,Network Security (Strata),Advanced,credits,410.44
+P0293,Exposure Management — Premium,Cortex,Premium,credits,93.47
+P0294,Prisma SD-WAN — Essentials,Prisma SASE,Essentials,credits,382.69
+P0295,Advanced WildFire — Essentials,Network Security (Strata),Essentials,licensed_units,279.83
+P0296,SaaS Security — Essentials,Prisma SASE,Essentials,licensed_units,52.35
+P0297,IoT Security — Premium,Network Security (Strata),Premium,licensed_units,204.25
+P0298,SaaS Security — Essentials,Prisma SASE,Essentials,licensed_units,160.37
+P0299,Advanced WildFire — Premium,Network Security (Strata),Premium,licensed_units,72.06
+P0300,Attack Surface Management — Premium,Cortex,Premium,credits,287.08
+P0301,Cortex XDR — Advanced,Cortex,Advanced,credits,247.34
+P0302,Cortex XSIAM — Premium,Cortex,Premium,credits,83.61
+P0303,Advanced URL Filtering — Premium,Network Security (Strata),Premium,licensed_units,455.42
+P0304,Prisma Browser — Essentials,Prisma SASE,Essentials,licensed_units,309.21
+P0305,Prisma SD-WAN — Premium,Prisma SASE,Premium,licensed_units,261.67
+P0306,Prisma SD-WAN — Premium,Prisma SASE,Premium,credits,84.16
+P0307,Exposure Management — Premium,Cortex,Premium,credits,170.01
+P0308,AI Runtime Security — Essentials,Prisma AIRS,Essentials,credits,50.01
+P0309,AI Model Scanning — Premium,Prisma AIRS,Premium,credits,110.66
+P0310,SaaS Security — Premium,Prisma SASE,Premium,licensed_units,428.05
+P0311,Autonomous DEM — Advanced,Prisma SASE,Advanced,licensed_units,388.59
+P0312,Cortex XSOAR — Advanced,Cortex,Advanced,credits,46.15
+P0313,Advanced WildFire — Advanced,Network Security (Strata),Advanced,licensed_units,107.48
+P0314,Cortex XSOAR — Premium,Cortex,Premium,credits,161.44
+P0315,AI Model Scanning — Advanced,Prisma AIRS,Advanced,credits,73.2
+P0316,SaaS Security — Essentials,Prisma SASE,Essentials,licensed_units,230.31
+P0317,Advanced Threat Prevention — Essentials,Network Security (Strata),Essentials,licensed_units,147.82
+P0318,SaaS Security — Advanced,Prisma SASE,Advanced,licensed_units,416.96
+P0319,Advanced URL Filtering — Premium,Network Security (Strata),Premium,licensed_units,100.84
+P0320,Advanced DNS Security — Advanced,Network Security (Strata),Advanced,licensed_units,156.4
+P0321,Advanced WildFire — Premium,Network Security (Strata),Premium,licensed_units,124.66
+P0322,Prisma Access — Essentials,Prisma SASE,Essentials,licensed_units,291.64
+P0323,Exposure Management — Advanced,Cortex,Advanced,credits,145.73
+P0324,NGFW — Advanced,Network Security (Strata),Advanced,licensed_units,135.77
+P0325,Enterprise DLP — Advanced,Prisma SASE,Advanced,licensed_units,35.94
+P0326,Prisma Browser — Premium,Prisma SASE,Premium,licensed_units,192.81
+P0327,SaaS Security — Advanced,Prisma SASE,Advanced,credits,303.68
+P0328,Cortex XDR — Essentials,Cortex,Essentials,credits,196.35
+P0329,Cortex XSOAR — Premium,Cortex,Premium,credits,451.43
+P0330,Cortex XDR — Premium,Cortex,Premium,credits,250.27
+P0331,Prisma Access — Essentials,Prisma SASE,Essentials,licensed_units,167.86
+P0332,Enterprise DLP — Essentials,Prisma SASE,Essentials,licensed_units,253.26
+P0333,Advanced DNS Security — Advanced,Network Security (Strata),Advanced,licensed_units,475.61
+P0334,Cortex XSOAR — Premium,Cortex,Premium,credits,169.42
+P0335,Attack Surface Management — Advanced,Cortex,Advanced,credits,343.69
+P0336,NGFW — Advanced,Network Security (Strata),Advanced,licensed_units,63.29
+P0337,Prisma Browser — Premium,Prisma SASE,Premium,credits,306.49
+P0338,Prisma Browser — Premium,Prisma SASE,Premium,credits,375.24
+P0339,Autonomous DEM — Essentials,Prisma SASE,Essentials,licensed_units,91.8
+P0340,Attack Surface Management — Advanced,Cortex,Advanced,credits,81.16
+P0341,Cortex XSIAM — Premium,Cortex,Premium,credits,455.76
+P0342,NGFW — Advanced,Network Security (Strata),Advanced,licensed_units,82.87
+P0343,Cortex Cloud — Premium,Cortex,Premium,credits,374.69
+P0344,AI Runtime Security — Premium,Prisma AIRS,Premium,credits,76.62
+P0345,Advanced URL Filtering — Premium,Network Security (Strata),Premium,licensed_units,188.35
+P0346,AI Posture Management — Premium,Prisma AIRS,Premium,credits,172.21
+P0347,Autonomous DEM — Premium,Prisma SASE,Premium,licensed_units,336.47
+P0348,Cortex XDR — Essentials,Cortex,Essentials,credits,142.57
+P0349,Advanced URL Filtering — Advanced,Network Security (Strata),Advanced,licensed_units,335.03
+P0350,Enterprise DLP — Advanced,Prisma SASE,Advanced,licensed_units,449.34
+P0351,Cortex XSOAR — Essentials,Cortex,Essentials,credits,280.39
+P0352,Enterprise DLP — Advanced,Prisma SASE,Advanced,credits,388.56
+P0353,Advanced URL Filtering — Premium,Network Security (Strata),Premium,licensed_units,444.44
+P0354,Exposure Management — Advanced,Cortex,Advanced,credits,112.15
+P0355,Cortex XSOAR — Premium,Cortex,Premium,credits,337.81
+P0356,Advanced DNS Security — Premium,Network Security (Strata),Premium,licensed_units,125.47
+P0357,Attack Surface Management — Essentials,Cortex,Essentials,credits,310.56
+P0358,Advanced WildFire — Advanced,Network Security (Strata),Advanced,licensed_units,59.06
+P0359,Cortex XSIAM — Premium,Cortex,Premium,credits,469.66
+P0360,IoT Security — Advanced,Network Security (Strata),Advanced,licensed_units,105.35
+P0361,AI Model Scanning — Advanced,Prisma AIRS,Advanced,credits,314.28
+P0362,AI Runtime Security — Premium,Prisma AIRS,Premium,credits,280.69
+P0363,Autonomous DEM — Essentials,Prisma SASE,Essentials,credits,93.93
+P0364,Cortex XDR — Essentials,Cortex,Essentials,credits,478.68
+P0365,Enterprise DLP — Essentials,Prisma SASE,Essentials,credits,462.28
+P0366,AI Runtime Security — Essentials,Prisma AIRS,Essentials,credits,151.65
+P0367,Cortex XSOAR — Advanced,Cortex,Advanced,credits,224.64
+P0368,Attack Surface Management — Advanced,Cortex,Advanced,credits,428.17
+P0369,Advanced DNS Security — Advanced,Network Security (Strata),Advanced,licensed_units,390.52
+P0370,IoT Security — Advanced,Network Security (Strata),Advanced,licensed_units,348.3
+P0371,Advanced URL Filtering — Advanced,Network Security (Strata),Advanced,licensed_units,366.41
+P0372,IoT Security — Advanced,Network Security (Strata),Advanced,credits,253.15
+P0373,IoT Security — Essentials,Network Security (Strata),Essentials,licensed_units,77.81
+P0374,Advanced Threat Prevention — Essentials,Network Security (Strata),Essentials,licensed_units,122.22
+P0375,Cortex XSOAR — Advanced,Cortex,Advanced,credits,284.59
+P0376,Prisma Browser — Premium,Prisma SASE,Premium,licensed_units,122.59
+P0377,Cortex Cloud — Advanced,Cortex,Advanced,credits,86.75
+P0378,Exposure Management — Advanced,Cortex,Advanced,credits,335.06
+P0379,Cortex XSOAR — Advanced,Cortex,Advanced,credits,299.64
+P0380,Advanced Threat Prevention — Advanced,Network Security (Strata),Advanced,licensed_units,361.94
+P0381,Cortex Cloud — Premium,Cortex,Premium,credits,269.04
+P0382,SaaS Security — Premium,Prisma SASE,Premium,credits,368.55
+P0383,Attack Surface Management — Essentials,Cortex,Essentials,credits,257.94
+P0384,Prisma Browser — Essentials,Prisma SASE,Essentials,credits,64.51
+P0385,Attack Surface Management — Essentials,Cortex,Essentials,credits,280.02
+P0386,Advanced URL Filtering — Premium,Network Security (Strata),Premium,licensed_units,330.38
+P0387,Cortex Cloud — Essentials,Cortex,Essentials,credits,432.68
+P0388,Prisma Access — Advanced,Prisma SASE,Advanced,licensed_units,206.42
+P0389,SaaS Security — Advanced,Prisma SASE,Advanced,licensed_units,156.22
+P0390,Advanced URL Filtering — Essentials,Network Security (Strata),Essentials,licensed_units,282.65
+P0391,Advanced URL Filtering — Premium,Network Security (Strata),Premium,licensed_units,477.25
+P0392,AI Runtime Security — Advanced,Prisma AIRS,Advanced,credits,26.85
+P0393,Prisma SD-WAN — Premium,Prisma SASE,Premium,credits,314.27
+P0394,Enterprise DLP — Advanced,Prisma SASE,Advanced,credits,436.37
+P0395,Autonomous DEM — Premium,Prisma SASE,Premium,credits,74.24
+P0396,Cortex XSIAM — Essentials,Cortex,Essentials,credits,476.65
+P0397,Prisma SD-WAN — Premium,Prisma SASE,Premium,credits,402.7
+P0398,Cortex XSOAR — Advanced,Cortex,Advanced,credits,327.2
+P0399,SaaS Security — Advanced,Prisma SASE,Advanced,credits,127.84
+P0400,Advanced URL Filtering — Essentials,Network Security (Strata),Essentials,credits,351.31
+P0401,IoT Security — Advanced,Network Security (Strata),Advanced,licensed_units,450.16
+P0402,Cortex XDR — Essentials,Cortex,Essentials,credits,43.49
+P0403,Enterprise DLP — Premium,Prisma SASE,Premium,licensed_units,420.2
+P0404,NGFW — Advanced,Network Security (Strata),Advanced,licensed_units,264.61
+P0405,Cortex XSIAM — Essentials,Cortex,Essentials,credits,247.82
+P0406,IoT Security — Premium,Network Security (Strata),Premium,licensed_units,291.83
+P0407,Cortex XSOAR — Essentials,Cortex,Essentials,credits,153.23
+P0408,IoT Security — Premium,Network Security (Strata),Premium,licensed_units,152.63
+P0409,Advanced DNS Security — Premium,Network Security (Strata),Premium,credits,304.96
+P0410,Enterprise DLP — Essentials,Prisma SASE,Essentials,credits,452.66
+P0411,Attack Surface Management — Advanced,Cortex,Advanced,credits,337.87
+P0412,Prisma Browser — Advanced,Prisma SASE,Advanced,licensed_units,263.75
+P0413,Advanced Threat Prevention — Advanced,Network Security (Strata),Advanced,credits,79.56
+P0414,Prisma Access — Premium,Prisma SASE,Premium,licensed_units,206.93
+P0415,Enterprise DLP — Essentials,Prisma SASE,Essentials,licensed_units,166.56
+P0416,Advanced WildFire — Advanced,Network Security (Strata),Advanced,licensed_units,351.11
+P0417,Advanced URL Filtering — Advanced,Network Security (Strata),Advanced,licensed_units,294.17
+P0418,Cortex XDR — Premium,Cortex,Premium,credits,350.97
+P0419,Enterprise DLP — Essentials,Prisma SASE,Essentials,credits,167.83
+P0420,AI Runtime Security — Essentials,Prisma AIRS,Essentials,credits,450.59
+P0421,AI Runtime Security — Premium,Prisma AIRS,Premium,credits,479.8
+P0422,Prisma SD-WAN — Premium,Prisma SASE,Premium,licensed_units,107.71
+P0423,AI Model Scanning — Advanced,Prisma AIRS,Advanced,credits,190.15
+P0424,Prisma Browser — Advanced,Prisma SASE,Advanced,licensed_units,252.0
+P0425,Prisma Access — Premium,Prisma SASE,Premium,licensed_units,404.99
+P0426,AI Model Scanning — Advanced,Prisma AIRS,Advanced,credits,205.72
+P0427,Prisma SD-WAN — Premium,Prisma SASE,Premium,licensed_units,134.04
+P0428,AI Posture Management — Advanced,Prisma AIRS,Advanced,credits,83.33
+P0429,Advanced WildFire — Premium,Network Security (Strata),Premium,credits,245.67
+P0430,Exposure Management — Advanced,Cortex,Advanced,credits,132.43
+P0431,Exposure Management — Premium,Cortex,Premium,credits,358.13
+P0432,Autonomous DEM — Advanced,Prisma SASE,Advanced,licensed_units,349.11
+P0433,SaaS Security — Premium,Prisma SASE,Premium,credits,257.21
+P0434,Cortex XSIAM — Premium,Cortex,Premium,credits,34.7
+P0435,Advanced Threat Prevention — Premium,Network Security (Strata),Premium,licensed_units,342.96
+P0436,Advanced DNS Security — Advanced,Network Security (Strata),Advanced,licensed_units,301.15
+P0437,Attack Surface Management — Advanced,Cortex,Advanced,credits,320.55
+P0438,Advanced DNS Security — Premium,Network Security (Strata),Premium,licensed_units,19.83
+P0439,Attack Surface Management — Advanced,Cortex,Advanced,credits,20.02
+P0440,Exposure Management — Advanced,Cortex,Advanced,credits,389.29
+P0441,AI Runtime Security — Essentials,Prisma AIRS,Essentials,credits,257.41
+P0442,Advanced DNS Security — Premium,Network Security (Strata),Premium,licensed_units,177.88
+P0443,Cortex XSIAM — Advanced,Cortex,Advanced,credits,460.95
+P0444,Prisma SD-WAN — Premium,Prisma SASE,Premium,licensed_units,332.13
+P0445,Exposure Management — Premium,Cortex,Premium,credits,367.49
+P0446,Advanced WildFire — Advanced,Network Security (Strata),Advanced,licensed_units,38.26
+P0447,Advanced Threat Prevention — Essentials,Network Security (Strata),Essentials,licensed_units,215.07
+P0448,Attack Surface Management — Essentials,Cortex,Essentials,credits,430.76
+P0449,AI Access Security — Essentials,Prisma AIRS,Essentials,credits,433.8
+P0450,Attack Surface Management — Advanced,Cortex,Advanced,credits,138.87
+P0451,AI Model Scanning — Premium,Prisma AIRS,Premium,credits,275.72
+P0452,Advanced URL Filtering — Essentials,Network Security (Strata),Essentials,credits,286.73
+P0453,Exposure Management — Advanced,Cortex,Advanced,credits,446.71
+P0454,Advanced DNS Security — Essentials,Network Security (Strata),Essentials,licensed_units,409.54
+P0455,Attack Surface Management — Advanced,Cortex,Advanced,credits,191.64
+P0456,Exposure Management — Premium,Cortex,Premium,credits,48.7
+P0457,Cortex XSOAR — Essentials,Cortex,Essentials,credits,57.72
+P0458,NGFW — Advanced,Network Security (Strata),Advanced,licensed_units,299.29
+P0459,Prisma Browser — Essentials,Prisma SASE,Essentials,licensed_units,378.7
+P0460,Prisma SD-WAN — Advanced,Prisma SASE,Advanced,licensed_units,187.7
+P0461,Advanced DNS Security — Premium,Network Security (Strata),Premium,licensed_units,373.37
+P0462,Advanced Threat Prevention — Premium,Network Security (Strata),Premium,licensed_units,137.41
+P0463,Autonomous DEM — Essentials,Prisma SASE,Essentials,licensed_units,160.21
+P0464,NGFW — Advanced,Network Security (Strata),Advanced,licensed_units,368.31
+P0465,NGFW — Essentials,Network Security (Strata),Essentials,licensed_units,272.67
+P0466,Prisma Access — Essentials,Prisma SASE,Essentials,licensed_units,271.37
+P0467,Prisma Browser — Advanced,Prisma SASE,Advanced,licensed_units,205.66
+P0468,Exposure Management — Premium,Cortex,Premium,credits,435.64
+P0469,AI Access Security — Premium,Prisma AIRS,Premium,credits,190.18
+P0470,Advanced URL Filtering — Advanced,Network Security (Strata),Advanced,licensed_units,41.61
+P0471,Enterprise DLP — Advanced,Prisma SASE,Advanced,licensed_units,48.0
+P0472,Advanced Threat Prevention — Premium,Network Security (Strata),Premium,licensed_units,289.9
+P0473,NGFW — Essentials,Network Security (Strata),Essentials,licensed_units,456.05
+P0474,Advanced DNS Security — Advanced,Network Security (Strata),Advanced,credits,166.23
+P0475,IoT Security — Premium,Network Security (Strata),Premium,licensed_units,162.07
+P0476,AI Access Security — Advanced,Prisma AIRS,Advanced,credits,159.04
+P0477,AI Model Scanning — Advanced,Prisma AIRS,Advanced,credits,355.92
+P0478,Attack Surface Management — Essentials,Cortex,Essentials,credits,164.51
+P0479,Advanced WildFire — Advanced,Network Security (Strata),Advanced,licensed_units,275.88
+P0480,SaaS Security — Essentials,Prisma SASE,Essentials,licensed_units,269.45
+P0481,AI Posture Management — Premium,Prisma AIRS,Premium,credits,110.12
+P0482,Exposure Management — Essentials,Cortex,Essentials,credits,395.28
+P0483,Cortex Cloud — Premium,Cortex,Premium,credits,245.67
+P0484,Cortex XDR — Advanced,Cortex,Advanced,credits,320.25
+P0485,Cortex Cloud — Essentials,Cortex,Essentials,credits,222.16
+P0486,SaaS Security — Advanced,Prisma SASE,Advanced,licensed_units,444.2
+P0487,Cortex Cloud — Premium,Cortex,Premium,credits,29.21
+P0488,AI Runtime Security — Essentials,Prisma AIRS,Essentials,credits,371.87
+P0489,Cortex XSOAR — Essentials,Cortex,Essentials,credits,314.8
+P0490,IoT Security — Premium,Network Security (Strata),Premium,licensed_units,464.47
+P0491,Advanced WildFire — Essentials,Network Security (Strata),Essentials,licensed_units,133.09
+P0492,SaaS Security — Premium,Prisma SASE,Premium,licensed_units,281.21
+P0493,Enterprise DLP — Advanced,Prisma SASE,Advanced,credits,287.46
+P0494,Prisma Browser — Essentials,Prisma SASE,Essentials,licensed_units,150.26
+P0495,AI Runtime Security — Essentials,Prisma AIRS,Essentials,credits,401.06
+P0496,Cortex XSOAR — Advanced,Cortex,Advanced,credits,172.56
+P0497,Attack Surface Management — Advanced,Cortex,Advanced,credits,175.0
+P0498,IoT Security — Premium,Network Security (Strata),Premium,licensed_units,43.44
+P0499,IoT Security — Essentials,Network Security (Strata),Essentials,licensed_units,172.56
+P0500,Advanced Threat Prevention — Premium,Network Security (Strata),Premium,licensed_units,93.64

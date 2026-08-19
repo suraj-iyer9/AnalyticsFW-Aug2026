@@ -1,0 +1,15 @@
+pandas
+numpy
+python-dateutil
+faker
+google-cloud-bigquery
+google-cloud-bigquery-storage
+pandas-gbq
+db-dtypes
+pyarrow
+streamlit
+plotly
+duckdb
+pytest
+python-dotenv
+tabulate

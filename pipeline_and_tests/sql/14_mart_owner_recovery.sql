@@ -41,6 +41,10 @@ SELECT
   prior_var_usd - annualized_var_usd                  AS value_recovered_usd,
   prior_var_usd * 0.15                                AS quota_usd,
   SAFE_DIVIDE(prior_var_usd - annualized_var_usd,
-              prior_var_usd * 0.15)                   AS quota_attainment
+              prior_var_usd * 0.15)                   AS quota_attainment,
+  -- Carried into the output, not just used as a filter. A consumer of this
+  -- table must be able to SEE that every row is based on complete data rather
+  -- than trust that it was filtered upstream.
+  quarter_is_complete
 FROM seq
 WHERE prior_var_usd IS NOT NULL;

@@ -1,16 +1,17 @@
+
 # Credentials — never commit
-.gcp-key.json
-*.json.key
-.env
-
-# Python
-__pycache__/
-*.py[cod]
-.venv/
-venv/
-.pytest_cache/
-.ipynb_checkpoints/
-
 # OS
+# Python
+*.json.key
+*.py[cod]
 .DS_Store
+.env
+.gcp-key.json
+.ipynb_checkpoints/
+.pytest_cache/
+.venv/
+__pycache__/
+docs/*.pdf.tmp
+docs/slide-*.jpg
 pipeline_and_tests/reports/
+venv/

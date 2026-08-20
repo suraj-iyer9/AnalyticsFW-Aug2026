@@ -1,0 +1,13 @@
+# Pinned to light. The chart palette was validated against a light surface
+# (contrast, colour-blind separation, and the status colours all assume it), so
+# letting the OS theme flip the page to dark would put validated marks on an
+# unvalidated background — and mixes light charts with dark chrome in screenshots.
+[theme]
+base = "light"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f4f4f2"
+textColor = "#0b0b0b"
+primaryColor = "#2a78d6"
+
+[browser]
+gatherUsageStats = false

@@ -164,16 +164,18 @@ def view_overview() -> None:
               help="Annualized run rate. Assumes this month's behaviour continues "
                    "for twelve. Technical name: Value at Risk.")
     c3.metric("Paying, not using",
-              f"{int(last.n_shelfware)} accounts",
-              f"{last.n_shelfware / last.customers:.0%} of customers",
-              delta_color="off",
-              help="Zero usage 90+ days after the contract started. "
-                   "Technical name: shelfware.")
+              f"{int(last.n_shelfware)}",
+              "customer–SKU relationships", delta_color="off",
+              help="A customer holding a SKU with zero usage 90+ days after the "
+                   "contract started. Counted per customer-SKU pair, not per "
+                   "customer — one customer can be healthy on one SKU and dormant "
+                   "on another. Technical name: shelfware.")
     c4.metric("Using more than they bought",
-              f"{int(last.n_overage)} accounts",
-              "expansion opportunity", delta_color="off",
-              help="Consuming 120%+ of entitlement for 3+ months. Both a growth "
-                   "signal and a contract-sizing problem.")
+              f"{int(last.n_overage)}",
+              "customer–SKU relationships", delta_color="off",
+              help="Consuming 120%+ of entitlement for 3+ months. Counted per "
+                   "customer-SKU pair. Both a growth signal and a contract-sizing "
+                   "problem.")
 
     st.divider()
     st.markdown("### 2 · Why the score is what it is")
@@ -204,7 +206,13 @@ def view_overview() -> None:
     )
 
     st.divider()
-    st.markdown("### 3 · Where the money is")
+    quadrant_view()
+
+    st.divider()
+    feature_depth_portfolio()
+
+    st.divider()
+    st.markdown("### 5 · Where the money is")
     left, right = st.columns(2)
 
     with left:
@@ -275,6 +283,210 @@ def view_overview() -> None:
          if gap > 0.01 else
          "The two track closely, so adoption performance is even across account "
          "sizes — the problem is portfolio-wide, not concentrated."),
+    )
+
+
+# ---------------------------------------------------------- the 2x2 view ---
+# Four quadrants, four owners, four plays.
+#
+# Position is the PRIMARY encoding here - colour is redundant reinforcement, and
+# each quadrant carries a written label. That matters because these are STATUS
+# colours (good / warning / serious / critical), which are reserved for state and
+# must never be the only thing distinguishing one group from another.
+QUADRANTS = [
+    # key, label, the play, who owns it, colour
+    ("value",   "Realizing value",        "Expansion conversation",              "Sales",           GOOD),
+    ("scaled",  "Set up, never scaled",   "Enablement — why hasn't volume grown?", "Customer Success", WARN),
+    ("hot",     "Running hot on one thing", "They'll hit the cap and renegotiate on price", "Sales + Product", ORANGE),
+    ("stalled", "Not started",            "Deployment intervention — churn risk", "CS leadership",   BAD),
+]
+DEFAULT_SPLIT = 0.5   # a default, not a decree — see the slider below
+
+
+def quadrant_view() -> None:
+    st.markdown("### 3 · The same score, four completely different problems")
+    st.caption("Every account, plotted by the two things the score is made of. "
+               "Bubble size is contract value.")
+
+    # The cut-off is a dial, not a decree. Nobody has to defend "why 50%" - move
+    # it and watch the boxes repopulate. It also makes the shape of the portfolio
+    # visible: if accounts only redistribute at a high threshold, the book is
+    # bimodal rather than evenly spread.
+    # Held as whole percent (30-90) rather than a 0-1 fraction: a "%.0f%%"
+    # format string applied to 0.5 renders as "0%", which is what the first
+    # version did. Store what you display, convert once.
+    SPLIT = st.slider(
+        "Where does “high” start?", min_value=30, max_value=90,
+        value=int(DEFAULT_SPLIT * 100), step=5, format="%d%%", key="quad_split",
+        help="The line between high and low on both axes. Defaults to 50%. "
+             "Raise it to separate the merely-adequate from the genuinely healthy.") / 100.0
+
+    df = q("""
+        SELECT cust_name, segment, account_owner, feature_coverage,
+               consumption_rate, vrr_value_weighted AS vrr,
+               licensed_value_usd * 12 AS book_usd,
+               value_at_risk_usd  * 12 AS var_usd
+        FROM `{MART}.mart_customer_adoption`
+        WHERE month = (SELECT MAX(month) FROM `{MART}.mart_customer_adoption`
+                       WHERE NOT is_incomplete)
+          AND feature_coverage IS NOT NULL AND consumption_rate IS NOT NULL
+    """)
+    if not len(df):
+        st.info("No scored accounts in the latest complete month.")
+        return
+
+    def bucket(r) -> str:
+        hi_f, hi_c = r.feature_coverage >= SPLIT, r.consumption_rate >= SPLIT
+        return ("value" if hi_f and hi_c else
+                "scaled" if hi_f else
+                "hot" if hi_c else "stalled")
+
+    df["quadrant"] = df.apply(bucket, axis=1)
+    size_ref = max(df.book_usd.max() / 900.0, 1e-9)
+
+    fig = go.Figure()
+    # quadrant tints, very light — orientation, not decoration
+    for x0, x1, y0, y1, colour in [
+        (SPLIT, 1.02, SPLIT, 1.02, GOOD), (0, SPLIT, SPLIT, 1.02, WARN),
+        (SPLIT, 1.02, 0, SPLIT, ORANGE), (0, SPLIT, 0, SPLIT, BAD),
+    ]:
+        fig.add_shape(type="rect", x0=x0, x1=x1, y0=y0, y1=y1,
+                      fillcolor=colour, opacity=0.05, line_width=0, layer="below")
+
+    for key, label, play, owner, colour in QUADRANTS:
+        sub = df[df.quadrant == key]
+        if not len(sub):
+            continue
+        fig.add_trace(go.Scatter(
+            x=sub.consumption_rate, y=sub.feature_coverage, mode="markers",
+            name=f"{label}  ({len(sub)})",
+            marker=dict(size=sub.book_usd / size_ref, sizemode="area", sizemin=8,
+                        color=colour, opacity=0.75,
+                        line=dict(color=SURFACE, width=2)),
+            customdata=sub[["cust_name", "vrr", "var_usd", "account_owner"]],
+            hovertemplate=("<b>%{customdata[0]}</b><br>"
+                           "Capacity used: %{x:.0%}<br>"
+                           "Features used: %{y:.0%}<br>"
+                           "Score: %{customdata[1]:.0%}<br>"
+                           "Not converting: $%{customdata[2]:,.0f}/yr<br>"
+                           "Owner: %{customdata[3]}<extra></extra>")))
+
+    fig.add_vline(x=SPLIT, line_width=1, line_color=MUTED, line_dash="dot")
+    fig.add_hline(y=SPLIT, line_width=1, line_color=MUTED, line_dash="dot")
+    for x, y, xa, ya, text in [
+        (1.0, 1.0, "right", "top", "REALIZING VALUE"),
+        (0.02, 1.0, "left", "top", "SET UP, NEVER SCALED"),
+        (1.0, 0.02, "right", "bottom", "RUNNING HOT ON ONE THING"),
+        (0.02, 0.02, "left", "bottom", "NOT STARTED"),
+    ]:
+        fig.add_annotation(x=x, y=y, text=text, showarrow=False,
+                           xanchor=xa, yanchor=ya,
+                           font=dict(color=MUTED, size=11))
+    fig.update_xaxes(range=[0, 1.03], tickformat=".0%",
+                     title="% of capacity being used →")
+    fig.update_yaxes(range=[0, 1.03], tickformat=".0%",
+                     title="% of features being used →")
+    fig = base_layout(fig, 520)
+    fig.update_layout(hovermode="closest")   # per-point, not grouped by x
+    st.plotly_chart(fig, width="stretch")
+
+    rows = []
+    for key, label, play, owner, _ in QUADRANTS:
+        sub = df[df.quadrant == key]
+        rows.append({"Where they sit": label, "Accounts": len(sub),
+                     "Not converting / yr": money(sub.var_usd.sum()),
+                     "What to do": play, "Who owns it": owner})
+    st.dataframe(pd.DataFrame(rows), width="stretch", hide_index=True)
+
+    explain(
+        "The two halves of the score, plotted against each other. An account at "
+        "26% could be in any of these four boxes — and each one is a different "
+        "problem with a different owner.",
+        "Work the boxes, not the score. Bottom-left is a rescue. Bottom-right is a "
+        "pricing conversation waiting to happen. Top-left is an enablement gap. "
+        "Top-right is where expansion comes from.",
+    )
+
+
+
+# ------------------------------------------------- how deep does use go? ---
+# A raw count of features used ignores the weighting - three Adjacent features
+# is not the same as the one Core feature the SKU was bought for. So every bar
+# is split by whether the Core feature is among the ones in use. The chart then
+# says two things at once: how MUCH of the SKU they touch, and whether they
+# touch the part that matters.
+#
+# De-duplicated to cust x product x feature first: a customer holding two
+# overlapping contracts on the same SKU must not have their features counted twice.
+DEPTH_SQL = """
+WITH f AS (
+  SELECT cust_id, product_id, feature_id,
+         LOGICAL_OR(is_active)   AS is_active,
+         ANY_VALUE(feature_tier) AS feature_tier
+  FROM `{MART}.stg_feature_activity`
+  WHERE month = (SELECT MAX(month) FROM `{MART}.mart_exec_summary`
+                 WHERE NOT is_incomplete)
+    {FILTER}
+  GROUP BY cust_id, product_id, feature_id
+),
+per_sku AS (
+  SELECT cust_id, product_id,
+         COUNTIF(is_active) AS features_used,
+         COUNT(*)           AS features_entitled,
+         LOGICAL_OR(is_active AND feature_tier = 'Core') AS uses_core
+  FROM f GROUP BY cust_id, product_id
+)
+SELECT features_used, uses_core, COUNT(*) AS n
+FROM per_sku GROUP BY features_used, uses_core ORDER BY features_used
+"""
+
+
+def depth_chart(df: pd.DataFrame, height: int = 320) -> go.Figure:
+    used = sorted(df.features_used.unique())
+    labels = [f"{u} feature" if u == 1 else f"{u} features" for u in used]
+    with_core = [int(df[(df.features_used == u) & (df.uses_core)].n.sum()) for u in used]
+    no_core = [int(df[(df.features_used == u) & (~df.uses_core)].n.sum()) for u in used]
+
+    fig = go.Figure()
+    fig.add_trace(go.Bar(x=labels, y=with_core, name="Includes the Core feature",
+                         marker_color=BLUE, marker_line=dict(color=SURFACE, width=2),
+                         text=[v or "" for v in with_core], textposition="inside",
+                         textfont=dict(color="#ffffff", size=11)))
+    fig.add_trace(go.Bar(x=labels, y=no_core, name="No Core feature in use",
+                         marker_color=ORANGE, marker_line=dict(color=SURFACE, width=2),
+                         text=[v or "" for v in no_core], textposition="inside",
+                         textfont=dict(color="#ffffff", size=11)))
+    fig.update_layout(barmode="stack", bargap=0.35,
+                      uniformtext_minsize=9, uniformtext_mode="hide")
+    return base_layout(fig, height, "Customer–SKU relationships")
+
+
+def feature_depth_portfolio() -> None:
+    st.markdown("### 4 · How much of a SKU do customers actually touch?")
+    df = q(DEPTH_SQL.replace("{FILTER}", ""))
+    if not len(df):
+        return
+    total = df.n.sum()
+    shallow = df[df.features_used <= 1].n.sum()
+    no_core = df[~df.uses_core].n.sum()
+
+    a, b, c = st.columns(3)
+    a.metric("Use one feature or none", f"{shallow / total:.0%}",
+             f"{int(shallow)} of {int(total)} relationships", delta_color="off")
+    b.metric("Use no Core feature at all", f"{no_core / total:.0%}",
+             "paying for the reason, using something else", delta_color="off")
+    c.metric("Use every feature they bought",
+             f"{df[df.features_used == df.features_used.max()].n.sum() / total:.0%}",
+             "fully deployed", delta_color="off")
+
+    st.plotly_chart(depth_chart(df, 340), width="stretch")
+    explain(
+        "Every customer–SKU relationship, grouped by how many features are in "
+        "use. Blue means the Core feature — the reason the SKU gets bought — is "
+        "among them. Orange means it is not.",
+        "Look for the cliff. If most relationships stack up at one feature, that "
+        "is not a hundred separate customer problems — it is one onboarding or "
+        "packaging problem, and fixing it once lifts every account on that SKU.",
     )
 
 
@@ -497,6 +709,18 @@ def view_products() -> None:
             "A blue bar with low adoption is a packaging or onboarding failure, "
             "not a customer failure. Fix it once and it lifts every account "
             "holding this SKU.")
+
+    st.markdown("**How many of this SKU's features does each customer use?**")
+    depth = q(DEPTH_SQL.replace(
+        "{FILTER}",
+        f"""AND product_id IN (SELECT product_id FROM `{{MART}}.stg_entitlements`
+                               WHERE product_name = '{chosen.replace("'", "''")}')"""))
+    if len(depth):
+        st.plotly_chart(depth_chart(depth, 300), width="stretch")
+        shallow = depth[depth.features_used <= 1].n.sum() / depth.n.sum()
+        st.caption(f"**{shallow:.0%} of customers on this SKU use one feature or "
+                   "none.** A concentration at the left is a deployment problem "
+                   "with this SKU, not with those customers.")
 
 
 # ----------------------------------------------------------------- owners ---

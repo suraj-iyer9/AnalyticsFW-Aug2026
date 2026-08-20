@@ -25,7 +25,7 @@ This repo is a working answer, end to end: a realistic messy dataset → BigQuer
 | **5 minutes** | this page | The metric, why it's two numbers and not one, and what it found |
 | **20 minutes** | [`specs/01_product_spec.md`](specs/01_product_spec.md) | The argument — why this metric, how it rolls up, what breaks it, and how you'd compensate against it |
 | **45 minutes** | [`specs/02_technical_spec.md`](specs/02_technical_spec.md) → [`pipeline_and_tests/sql/`](pipeline_and_tests/sql/) | How 15 SQL models turn raw usage into a defensible number |
-| **An afternoon** | [Run it](#run-it--five-commands) | All of it, on your own BigQuery project, in about three minutes of runtime |
+| **An afternoon** | [`docs/SETUP.md`](docs/SETUP.md) → [Run it](#run-it) | All of it, on your own free BigQuery Sandbox — 25 minutes of setup, 3 minutes of runtime |
 
 **If you only open one file, open [`specs/01_product_spec.md`](specs/01_product_spec.md).** It opens with a revision history — this framework went through nine versions, and the metric got *simpler* each time.
 
@@ -103,27 +103,52 @@ dashboard/
   app.py                  Streamlit. Five views: Overview, Customers, Products,
                           Owners, Data Quality.
 
+scripts/
+  smoke_test_bigquery.py  Seven checks on your GCP setup. Run this before
+                          anything else — it fails fast and tells you the fix.
+
 docs/
+  SETUP.md                Zero to running dashboard in 25 minutes.
   executive_deck.pdf      The 14-slide version of this argument.
   screenshots/            What the dashboard actually looks like.
 ```
 
 ---
 
-## Run it — five commands
+## Run it
+
+**You need:** Python 3.10+ and a Google account. Nothing else — this runs entirely on the **free** BigQuery Sandbox. No credit card, no billing account.
+
+**First time?** → **[`docs/SETUP.md`](docs/SETUP.md)** walks you from zero to a running dashboard in about 25 minutes, including the GCP project, the datasets, and the service-account key.
+
+**Already have a BigQuery project?** Six commands:
 
 ```bash
-cp .env.example .env          # add your GCP project + dataset names
-python data_generation/generate_dataset.py     # ~5s, deterministic (seed 42)
-python data_generation/load_to_bigquery.py     # ~30s
-python pipeline_and_tests/run_pipeline.py      # ~60s, 15 models
-pytest pipeline_and_tests/tests/ -q            # 40 tests
-streamlit run dashboard/app.py                 # opens in your browser
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+cp .env.example .env                           # then edit it — see SETUP.md step 5
+python scripts/smoke_test_bigquery.py          # verify credentials before building
+python data_generation/generate_dataset.py
+python data_generation/load_to_bigquery.py
+python pipeline_and_tests/run_pipeline.py
+pytest pipeline_and_tests/tests/ -q
+streamlit run dashboard/app.py
 ```
 
-**Requirements:** Python 3.12, a BigQuery project (the free Sandbox is enough), and a service-account key. `pip install -r requirements.txt`.
+**What you should see at each step** — if you don't see it, stop there rather than continuing:
 
-Everything is seeded, so you get the same dataset every time. Nothing is hardcoded — point `.env` at a different project and it runs there.
+| Step | Time | Success looks like |
+|---|---|---|
+| `smoke_test_bigquery.py` | ~10s | `ALL CHECKS PASSED — environment is ready.` |
+| `generate_dataset.py` | ~5s | `Wrote 7 CSVs`, then a `VALIDATION` block that is all `PASS` |
+| `load_to_bigquery.py` | ~30s | `All tables loaded.` — each table's source rows matched its landed rows |
+| `run_pipeline.py` | ~60s | A printed `DATA QUALITY AUDIT` table, then the audit table and report paths |
+| `pytest` | ~40s | `40 passed` |
+| `streamlit run` | — | Opens `localhost:8501`. Portfolio VRR **47%**, **$13.2M** at risk. |
+
+Those last two numbers are the check that matters: everything is seeded from `RANDOM_SEED=42`, so if your dashboard shows 47% and $13.2M, you have reproduced the exact dataset behind the deck. Nothing is hardcoded — point `.env` at a different project and it runs there.
+
+**Something broke?** The troubleshooting table in [`docs/SETUP.md`](docs/SETUP.md#when-something-breaks) covers the six failures worth knowing about.
 
 ---
 

@@ -15,3 +15,4 @@ docs/*.pdf.tmp
 docs/slide-*.jpg
 pipeline_and_tests/reports/
 venv/
+~$*

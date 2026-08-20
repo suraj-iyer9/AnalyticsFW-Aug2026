@@ -1,10 +1,33 @@
 # Product Adoption & Value Realization Framework
 
-**A customer pays you $100k a year. Are they actually using it?**
+**A framework for answering one question a SaaS business usually can't: *is the customer actually using what they bought — and what is the gap worth?***
 
-Most SaaS businesses can answer *did they buy?* and *did they renew?* Almost none can answer the question in between — and that question is worth more, because it's the only one you can still act on.
+---
 
-This repo answers it. End to end: synthetic data → BigQuery → metric pipeline → tests → dashboard.
+## Start here
+
+Most SaaS businesses can answer *did they buy?* and *did they renew?* Almost none can answer the question in between. That question is worth more than either, because it's the only one you can still act on.
+
+This repo is a working answer, end to end: a realistic messy dataset → BigQuery → a metric pipeline → tests that check the metric is *right* → a dashboard three different audiences can use. It was built spec-first: the argument is written down before the code, and the code is an artifact of it.
+
+**What it is not:** production software, or proof that this metric predicts churn. It runs on synthetic data by design — see [Known limitations](#known-limitations), which is the honest version of that sentence.
+
+<p align="center">
+  <img src="docs/screenshots/03_overview_tiles_1_light.png" width="100%" alt="Executive KPI strip: 47% value realization rate, $13.2M of contract value not converting, 28 accounts paying and not using, 21 consuming more than they bought">
+</p>
+
+---
+
+## How to read this repo
+
+| If you have | Read | You'll come away knowing |
+|---|---|---|
+| **5 minutes** | this page | The metric, why it's two numbers and not one, and what it found |
+| **20 minutes** | [`specs/01_product_spec.md`](specs/01_product_spec.md) | The argument — why this metric, how it rolls up, what breaks it, and how you'd compensate against it |
+| **45 minutes** | [`specs/02_technical_spec.md`](specs/02_technical_spec.md) → [`pipeline_and_tests/sql/`](pipeline_and_tests/sql/) | How 15 SQL models turn raw usage into a defensible number |
+| **An afternoon** | [Run it](#run-it--five-commands) | All of it, on your own BigQuery project, in about three minutes of runtime |
+
+**If you only open one file, open [`specs/01_product_spec.md`](specs/01_product_spec.md).** It opens with a revision history — this framework went through nine versions, and the metric got *simpler* each time.
 
 ---
 
@@ -12,7 +35,7 @@ This repo answers it. End to end: synthetic data → BigQuery → metric pipelin
 
 > **VRR = the share of what a customer paid for that they're actually using.**
 
-Two percentages, multiplied:
+Think of a contract as a square: every feature they bought across every unit of capacity they bought. VRR is how much of that square they occupy.
 
 ```
 VRR  =  Feature Coverage  ×  Consumption Rate
@@ -36,7 +59,17 @@ They bought a platform and deployed a point tool. Neither number alone would hav
 
 ---
 
-## Why not just one number
+## Why two numbers, not one
+
+Because the same score means four completely different problems — with four different owners and four different plays.
+
+<p align="center">
+  <img src="docs/screenshots/01_quadrant_light.png" width="100%" alt="Scatter of every account by capacity used and features used, split into four quadrants, with a table mapping each quadrant to an action and an owner">
+</p>
+
+An account at 40% because it uses one feature intensely is a *pricing* conversation. An account at 40% because it's set up everywhere and barely used is an *enablement* conversation. Collapse the two inputs into one score and you lose the ability to tell them apart — which is exactly how adoption dashboards end up admired and unused.
+
+## Why the dollar figure matters more than the ratio
 
 VRR is a ratio, and ratios can't be added across customers. Dollars can.
 
@@ -51,13 +84,29 @@ Value at Risk  =  contract value  ×  (1 − VRR)
 ## What's in here
 
 ```
-specs/               The framework. Read 01 first — it's the argument, not the code.
-data_generation/     Builds a realistic, messy B2B dataset and loads it to BigQuery.
-pipeline_and_tests/  15 SQL models that compute the metric. 40 tests that check it's right.
-dashboard/           Streamlit app. Executive, Customer, Product, Owner, Data Quality.
-```
+specs/
+  01_product_spec.md      The argument. Metric definition, roll-ups, edge cases,
+                          incentive design, limitations. Read this first.
+  02_technical_spec.md    Data model, the 15 models, test strategy, traceability.
 
-**Start with [`specs/01_product_spec.md`](specs/01_product_spec.md).** It opens with a revision history — this framework went through nine versions, and the metric got *simpler* each time.
+data_generation/
+  generate_dataset.py     100 customers, 500 products, 2,012 features, 15 months.
+                          Seeded — same dataset every time. 12 realities injected.
+  load_to_bigquery.py     Idempotent load with row-count verification.
+
+pipeline_and_tests/
+  sql/                    15 models: staging → intermediate → 6 marts.
+  run_pipeline.py         Runs them in order and publishes a data-quality audit.
+  tests/                  40 tests. 16 on the generator, 24 on the pipeline.
+
+dashboard/
+  app.py                  Streamlit. Five views: Overview, Customers, Products,
+                          Owners, Data Quality.
+
+docs/
+  executive_deck.pdf      The 14-slide version of this argument.
+  screenshots/            What the dashboard actually looks like.
+```
 
 ---
 

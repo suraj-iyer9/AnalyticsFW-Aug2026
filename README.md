@@ -6,7 +6,7 @@
 
 ## Start here
 
-Most SaaS businesses can answer *did they buy?* and *did they renew?* Almost none can answer the question in between. That question is worth more than either, because it's the only one you can still act on.
+Most SaaS businesses can answer *did they buy?* and *did they renew?* The question in between is much harder to answer — and it's the one that matters most, because it's the only one you can still act on.
 
 This repo is a working answer, end to end: a realistic messy dataset → BigQuery → a metric pipeline → tests that check the metric is *right* → a dashboard three different audiences can use. It was built spec-first: the argument is written down before the code, and the code is an artifact of it.
 

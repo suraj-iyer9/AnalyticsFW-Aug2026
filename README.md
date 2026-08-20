@@ -33,7 +33,7 @@ This repo is a working answer, end to end: a realistic messy dataset → BigQuer
 
 ## The metric, in one line
 
-> **VRR = the share of what a customer paid for that they're actually using.**
+> **Value Realization Rate (VRR) = the share of what a customer paid for that they're actually using.**
 
 Think of a contract as a square: every feature they bought across every unit of capacity they bought. VRR is how much of that square they occupy.
 

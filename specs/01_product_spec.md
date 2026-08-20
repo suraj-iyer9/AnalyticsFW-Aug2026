@@ -1,6 +1,6 @@
 # Product Spec — Product Adoption & Value Realization Framework
 
-**Author:** Suraj · **Version:** 2.4 · **Status:** Proposal for Product LT review
+**Author:** Suraj · **Version:** 2.5 · **Status:** Proposal for Product LT review
 **Audience:** Product leadership, GMs of Product, Customer Success leadership, Analytics leadership, Engineering
 
 ## Revision history
@@ -18,9 +18,10 @@ This spec was not written once. It was argued down through nine revisions, and t
 | 2.1 | Consistency check | Fixed **grain**: all inputs monthly; worked example rebuilt; monthly stored, annualized presented | The example mixed an annual credit pool with a monthly dollar figure — the exact error the framework warns about, made in the framework's own worked example |
 | 2.2 | Robustness review | Added **§6.6 — seven data-integrity edge cases** beyond the four in scope | The specified edge cases are all behavioural. Real data also breaks because the plumbing breaks, and that is where adoption metrics fail quietly. |
 | 2.3 | Author challenge | **§7 rewritten around Value at Risk Recovered.** Compensation now derives directly from the metric rather than sitting beside it. | "Here is a metric, don't pay people on it" is not an answer to a question about incentives. The connection existed in Value at Risk the whole time. |
-| **2.4** | Spec-to-spec verification | Added §4.5 expected VRR distribution; `account_owner` so §7 is implementable; recovery restricted to closed periods | A rep-level comp design with no rep in the data model is theory. The distribution table prevents a reader interpreting 0.30 as failure. |
+| **2.4** | Spec-to-spec verification | Added §4.5 VRR distribution; `account_owner` so §7 is implementable; recovery restricted to closed periods | A rep-level comp design with no rep in the data model is theory. |
+| **2.5** | Dry run with a listener | **Reframed VRR as occupancy** — the share of a purchased square that is in use. §4.5 rewritten to answer *is it utilization, can it be 0, can it be 100, why 20–50%* directly. | Explaining it to someone cold exposed the flaw: describing "a typical range of 20–50%" made the range sound like a rule the metric imposes, and a product of two percentages is not obviously a percentage *of anything*. Occupancy makes it an area, which is concrete — and reveals that **100% is an upsell signal, not a target**, because the account has no headroom left. |
 
-**What changed most between 1.0 and 2.4:** the metric got *simpler* — three factors to two, a cube root to a multiplication — while the framework around it got substantially more complete. Five edge cases became twelve, and the incentive section went from a closing recommendation to a working comp mechanism with quota mechanics and named gaming failure modes.
+**What changed most between 1.0 and 2.5:** the metric got *simpler* — three factors to two, a cube root to a multiplication — while the framework around it got substantially more complete. Five edge cases became twelve, and the incentive section went from a closing recommendation to a working comp mechanism with quota mechanics and named gaming failure modes.
 
 ---
 
@@ -146,7 +147,15 @@ Distinct from the four *framing questions* above. These are engineering constrai
 
 ### 4.1 In one sentence
 
-> **VRR is the share of what a customer paid for that they are actually using.**
+> **VRR is occupancy: how much of what a customer bought is actually in use.**
+
+**The mental model.** Everything a customer could get from a SKU is a square —
+all their features on one side, all their capacity on the other. The full square
+is every feature, running at full capacity. **VRR is the share of that square
+they occupy.** The remainder is headroom they have already paid for.
+
+This is why the two factors are multiplied rather than averaged: you are
+computing an area, not blending two opinions.
 
 Reported monthly, at the grain of `customer × SKU`.
 
@@ -226,9 +235,23 @@ VRR             = 33% × 80%   = 26%
 
 **Reading it:** Acme is consuming plenty of capacity, but funnelling all of it through one of four features. They bought a platform and deployed a point tool. That is a renewal risk neither consumption alone nor a feature checklist alone would have caught.
 
-### 4.5 What a normal VRR looks like
+### 4.5 What VRR values mean
 
-A low VRR is not a failing grade. It is the finding. Expected shape of a real portfolio:
+**VRR is not a grade, and it has no target.** It is a measure of how much of a
+purchased envelope is occupied. Three points that are routinely misread:
+
+| Question | Answer |
+|---|---|
+| **Is it a utilization metric?** | No. Utilization is *one side* of the square. VRR is the area, and needs both sides. |
+| **Can it be 0%?** | Yes. No active features, or no consumption, collapses the area to zero. Roughly a third of relationships in the modelled portfolio sit at or near zero. |
+| **Can it be 100%?** | Yes — every feature, at full capacity. Nothing prevents it. **But it should not be the goal:** an account at 100% has no headroom left. It is under-provisioned, and that is an expansion signal, not a success. |
+
+**The useful analogy is hotel occupancy.** A hotel with 100 rooms open 365 days
+has 36,500 available room-nights; occupancy is the fraction sold. Nobody expects
+100%, and a hotel running at 100% did not build enough rooms.
+
+**Observed distribution** — this is what the modelled portfolio does, not a rule
+the metric imposes:
 
 | VRR | Share of accounts | Reading |
 |---|---|---|
@@ -237,7 +260,10 @@ A low VRR is not a failing grade. It is the finding. Expected shape of a real po
 | 0.40 – 0.70 | ~30% | Healthy |
 | 0.70 + | ~15% | Fully deployed |
 
-Most of the book sits between 0.2 and 0.5, because enterprise customers routinely deploy a fraction of what they buy. **Three very different accounts can share a score of 0.30:**
+Most of this book sits between 0.2 and 0.5 because enterprise customers routinely
+buy broad platforms and deploy narrowly. **That observation is itself the finding**
+— it is not a property of the metric, and it should never be presented as an
+expected range. **Three very different accounts can share a score of 0.30:**
 
 | Coverage | Consumption | VRR | Story |
 |---|---|---|---|
@@ -247,7 +273,10 @@ Most of the book sits between 0.2 and 0.5, because enterprise customers routinel
 
 The apex says *how much*; the two factors say *what to do*. This is why VRR is never displayed alone.
 
-> **There is no good absolute value for this metric in year one. It is a baseline.** What matters is the distribution and the direction. If every account scored 0.9, the metric would not be telling us anything.
+> **There is no good absolute value for this metric in year one. It is a baseline.**
+> What matters is the distribution, the direction, and how many dollars sit in the
+> empty part of the square. If every account scored 0.9, the metric would not be
+> telling us anything — and the portfolio would be out of headroom.
 
 ### 4.6 Why multiply, and why only two factors
 

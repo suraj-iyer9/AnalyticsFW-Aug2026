@@ -94,15 +94,17 @@ def start_here() -> None:
 **The question this answers:** a customer pays us $100k a year. Are they
 actually using it?
 
-**The score — Value Realization Rate:** the share of what a customer paid for
-that they are actually using. Two percentages, multiplied:
+**Think of it as occupancy.** Everything a customer could get from a SKU is a
+square: all their features on one side, all their capacity on the other. The
+score is **how much of that square they occupy**.
 
-> **% of their features they use  ×  % of their capacity they use**
+> **VRR  =  % of their features they use  ×  % of their capacity they use**
 
-**What a normal score looks like:** most accounts land between **20% and 50%**.
-Enterprise customers routinely deploy a fraction of what they buy — so a low
-number is the *finding*, not a failing grade. What matters is the direction and
-where the money sits.
+An account at 26% is using a quarter of what they bought. **The other 74% is
+paid for and empty** — that is the opportunity, not a failing grade.
+
+**100% is not the target.** An account at 100% has no headroom left — they are
+under-provisioned, and that is an upsell signal, not a win.
             """)
         with c2:
             st.markdown("""
@@ -115,6 +117,7 @@ where the money sits.
 | Using more than they bought | Consuming 120%+ — an expansion conversation |
 | Too new to score | Under 90 days old; deliberately not scored |
 | Weighted by contract size | Big accounts count more, as in the business |
+| Headroom | The part of the square they are paying for and not using |
             """)
 
 
@@ -154,9 +157,11 @@ def view_overview() -> None:
     c1.metric("Value Realization Rate",
               f"{last.vrr_value_weighted:.0%}",
               f"{last.vrr_value_weighted - prev.vrr_value_weighted:+.1%} vs last month",
-              help="Share of contract value being actively used. "
-                   "Typical range 20–50%. 12-month average for this portfolio: "
-                   f"{avg:.0%}. Technical name: VRR.")
+              help="Occupancy: how much of what they bought is in use — the "
+                   "share of features used multiplied by the share of capacity "
+                   "used. Not a grade; the remainder is headroom already paid "
+                   f"for. This portfolio's 12-month average is {avg:.0%}. "
+                   "Technical name: VRR.")
     c2.metric("Contract value not converting",
               money(last.annualized_var_usd),
               f"{1 - last.vrr_value_weighted:.0%} of the book",
@@ -448,14 +453,16 @@ def depth_chart(df: pd.DataFrame, height: int = 320) -> go.Figure:
     no_core = [int(df[(df.features_used == u) & (~df.uses_core)].n.sum()) for u in used]
 
     fig = go.Figure()
+    # textposition="auto" rather than "inside": a thin segment cannot hold a
+    # label, and forcing it inside clips the glyphs instead of moving them.
     fig.add_trace(go.Bar(x=labels, y=with_core, name="Includes the Core feature",
                          marker_color=BLUE, marker_line=dict(color=SURFACE, width=2),
-                         text=[v or "" for v in with_core], textposition="inside",
-                         textfont=dict(color="#ffffff", size=11)))
+                         text=[v or "" for v in with_core], textposition="auto",
+                         textfont=dict(size=12), cliponaxis=False))
     fig.add_trace(go.Bar(x=labels, y=no_core, name="No Core feature in use",
                          marker_color=ORANGE, marker_line=dict(color=SURFACE, width=2),
-                         text=[v or "" for v in no_core], textposition="inside",
-                         textfont=dict(color="#ffffff", size=11)))
+                         text=[v or "" for v in no_core], textposition="auto",
+                         textfont=dict(size=12), cliponaxis=False))
     fig.update_layout(barmode="stack", bargap=0.35,
                       uniformtext_minsize=9, uniformtext_mode="hide")
     return base_layout(fig, height, "Customer–SKU relationships")
